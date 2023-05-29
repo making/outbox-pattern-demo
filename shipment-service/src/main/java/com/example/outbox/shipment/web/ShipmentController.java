@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ShipmentController {
+
 	private final ShipmentRepository shipmentRepository;
 
 	public ShipmentController(ShipmentRepository shipmentRepository) {
@@ -20,4 +21,5 @@ public class ShipmentController {
 	public List<Shipment> getShipments() {
 		return this.shipmentRepository.findAll();
 	}
+
 }

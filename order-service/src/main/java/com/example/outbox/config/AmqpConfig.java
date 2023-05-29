@@ -36,4 +36,5 @@ public class AmqpConfig {
 	public RabbitTemplateCustomizer rabbitTemplateCustomizer() {
 		return rabbitTemplate -> rabbitTemplate.setObservationEnabled(true);
 	}
+
 }

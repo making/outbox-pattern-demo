@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Shipment {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long shipmentId;
@@ -43,10 +44,7 @@ public class Shipment {
 
 	@Override
 	public String toString() {
-		return "Shipment{" +
-			   "shipmentId=" + shipmentId +
-			   ", orderId=" + orderId +
-			   ", orderDate=" + orderDate +
-			   '}';
+		return "Shipment{" + "shipmentId=" + shipmentId + ", orderId=" + orderId + ", orderDate=" + orderDate + '}';
 	}
+
 }

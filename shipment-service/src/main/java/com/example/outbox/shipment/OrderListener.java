@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Observed
 public class OrderListener {
+
 	private final ShipmentService shipmentService;
 
 	private final ObjectMapper objectMapper;
@@ -32,10 +33,12 @@ public class OrderListener {
 				this.shipmentService.orderCreated(event);
 			}
 			case "order_cancelled" -> {
-				final OrderEvents.Cancelled event = this.objectMapper.convertValue(payload, OrderEvents.Cancelled.class);
+				final OrderEvents.Cancelled event = this.objectMapper.convertValue(payload,
+						OrderEvents.Cancelled.class);
 				this.shipmentService.orderCancelled(event);
 			}
 			default -> log.warn("Unknown Event Type: {}", eventType);
 		}
 	}
+
 }

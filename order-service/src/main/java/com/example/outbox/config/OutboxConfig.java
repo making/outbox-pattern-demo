@@ -37,9 +37,9 @@ public class OutboxConfig {
 	@Bean
 	public MessageHandler amqpHandler(AmqpTemplate amqpTemplate, ObjectMapper objectMapper) {
 		final MessageHandler messageHandler = Amqp.outboundAdapter(amqpTemplate)
-				.exchangeName("order")
-				.routingKey("event")
-				.getObject();
+			.exchangeName("order")
+			.routingKey("event")
+			.getObject();
 		final Logger log = LoggerFactory.getLogger("amqpHandler");
 		return message -> {
 			final JsonNode payload = objectMapper.convertValue(message.getPayload(), JsonNode.class);
@@ -51,8 +51,8 @@ public class OutboxConfig {
 	@Bean
 	public IntegrationFlow messageRelayFlow(MessageHandler amqpHandler) {
 		return IntegrationFlow.from("outbox")
-				.handle(amqpHandler, e -> e.poller(poller -> poller.fixedDelay(3_000, 3_000).transactional()))
-				.get();
+			.handle(amqpHandler, e -> e.poller(poller -> poller.fixedDelay(3_000, 3_000).transactional()))
+			.get();
 	}
 
 }

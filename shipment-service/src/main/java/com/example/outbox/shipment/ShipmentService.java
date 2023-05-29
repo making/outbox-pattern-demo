@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Observed
 public class ShipmentService {
+
 	private final ShipmentRepository shipmentRepository;
 
 	private final Logger log = LoggerFactory.getLogger(ShipmentService.class);
@@ -31,4 +32,5 @@ public class ShipmentService {
 	public void orderCancelled(OrderEvents.Cancelled event) {
 		log.info("Cancelled order: {}", event);
 	}
+
 }

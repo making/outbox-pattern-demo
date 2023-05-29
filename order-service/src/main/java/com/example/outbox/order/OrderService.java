@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Observed
 public class OrderService {
+
 	private final OrderRepository orderRepository;
 
 	public OrderService(OrderRepository orderRepository) {
@@ -22,4 +23,5 @@ public class OrderService {
 	public int cancel(Long orderId) {
 		return this.orderRepository.updateStatus(orderId, OrderStatus.CANCELLED);
 	}
+
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class OrderController {
+
 	private final OrderGateway orderGateway;
 
 	private final Clock clock;
@@ -39,4 +40,5 @@ public class OrderController {
 		this.orderGateway.cancelOrder(orderId);
 		log.info("Cancelled {}", orderId);
 	}
+
 }

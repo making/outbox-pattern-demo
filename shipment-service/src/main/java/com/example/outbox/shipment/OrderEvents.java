@@ -5,13 +5,13 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 public class OrderEvents {
-	public record Created(Long orderId, BigDecimal amount,
-						  OffsetDateTime orderDate) implements Serializable {
+
+	public record Created(Long orderId, BigDecimal amount, OffsetDateTime orderDate) implements Serializable {
 
 	}
 
-	public record Cancelled(Long orderId,
-							OffsetDateTime cancelDate) implements Serializable {
+	public record Cancelled(Long orderId, OffsetDateTime cancelDate) implements Serializable {
 
 	}
+
 }

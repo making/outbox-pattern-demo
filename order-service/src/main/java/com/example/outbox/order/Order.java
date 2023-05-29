@@ -14,6 +14,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "\"order\"")
 public class Order {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long orderId;
@@ -25,11 +26,9 @@ public class Order {
 
 	private OffsetDateTime orderDate;
 
-
 	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
 	}
-
 
 	public Long getOrderId() {
 		return orderId;
@@ -61,11 +60,8 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order{" +
-			   "orderId=" + orderId +
-			   ", amount=" + amount +
-			   ", status=" + status +
-			   ", orderDate=" + orderDate +
-			   '}';
+		return "Order{" + "orderId=" + orderId + ", amount=" + amount + ", status=" + status + ", orderDate="
+				+ orderDate + '}';
 	}
+
 }

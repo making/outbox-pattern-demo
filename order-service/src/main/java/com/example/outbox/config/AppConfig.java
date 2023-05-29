@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration(proxyBeanMethods = false)
 public class AppConfig {
+
 	@Bean
 	public ObservedAspect observedAspect(ObservationRegistry observationRegistry) {
 		return new ObservedAspect(observationRegistry);
@@ -28,4 +29,5 @@ public class AppConfig {
 			return uri != null && !(uri.equals("/readyz") || uri.equals("/livez") || uri.startsWith("/actuator"));
 		});
 	}
+
 }

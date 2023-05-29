@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration(proxyBeanMethods = false)
 public class AmqpConfig {
+
 	@Bean
 	public Jackson2JsonMessageConverter jsonMessageConverter() {
 		return new Jackson2JsonMessageConverter();
@@ -17,4 +18,5 @@ public class AmqpConfig {
 	public ContainerCustomizer<SimpleMessageListenerContainer> containerCustomizer() {
 		return container -> container.setObservationEnabled(true);
 	}
+
 }
